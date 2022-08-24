@@ -8,10 +8,19 @@ const divFinal = document.querySelector(".final");
 const btnJugarDeNuevo = document.querySelector("#btn-jugar-de-nuevo");
 const letrasNoAdivinadas = document.querySelector(".no-adivinadas");
 const espacio = letrasNoAdivinadas.textContent; //guardar valor original para el reinicio;
+const btnAgregarPalabra = document.querySelector("#btn-agregar-palabra");
+const agregaPalabra = document.querySelector(".agrega-palabra");
+const formulario = document.querySelector("form");
+const btnCancelar = document.querySelector("#btn-cancelar");
+const nuevaPalabra = document.querySelector("#nueva-palabra");
+
 
 nuevoJuego.style.display = "none";
-pantalla.style.display = "none";
+agregaPalabra.style.display = "none"
 dibujarLinea(0,490,490,490);
+let intentos = 0;
+let coincidencias = 0;
+let letrasAdivinadas = "";
 
 const palabras = ["ALURA","ORACLE","HTML","JAVASCRIPT","PROGRAMACION","REACT","CANVAS","VARIABLE","BUCLE","ITERACION","INFORMATICA"];
 let indice = Math.round(Math.random()*(palabras.length-1));
@@ -35,15 +44,10 @@ const reset = () => {
     dibujarLinea(0,490,490,490,"#0A3871");
     indice = Math.round(Math.random()*(palabras.length-1));
     palabra = palabras[indice];
-    console.log(indice);
     intentos = 0;
     coincidencias = 0;
     letrasAdivinadas = "";
 }
-
-let intentos = 0;
-let coincidencias = 0;
-let letrasAdivinadas = "";
 
 const comparaLetra = event => {
     let letra = event.key.toUpperCase();
@@ -73,8 +77,9 @@ const comparaLetra = event => {
 }
 
 const jugar = () => {
+    inicio.style.display = "none";
+    nuevoJuego.style.display = "flex";
     divFinal.style.display = "none";
-    pantalla.style.display = "inline";
     for (let i=0; i<palabra.length; i++){
         let letra = palabra[i].toUpperCase();
         divPalabra.insertAdjacentHTML("beforeend", `<div><h1>${letra}</h1></div>`)
@@ -82,22 +87,43 @@ const jugar = () => {
     document.addEventListener("keypress", comparaLetra);
 }
 
-btnNuevoJuego.addEventListener("click", ()=> {
-    inicio.style.display = "none";
-    nuevoJuego.style.display = "flex";
+btnNuevoJuego.addEventListener("click", () => {
     jugar();
 })
 
-btnDesistir.addEventListener("click", ()=> {
+btnDesistir.addEventListener("click", () => {
     nuevoJuego.style.display = "none";
     inicio.style.display = "flex";
     reset();
 })
 
-btnJugarDeNuevo.addEventListener("click", ()=> {
+btnJugarDeNuevo.addEventListener("click", () => {
     reset();
     jugar();
 })
+
+btnAgregarPalabra.addEventListener("click", () => {
+    inicio.style.display = "none";
+    agregaPalabra.style.display = "flex";
+    nuevaPalabra.value = "";
+    nuevaPalabra.focus();
+})
+
+formulario.addEventListener("submit", event => {
+    event.preventDefault();
+    const palabraNueva = nuevaPalabra.value.toUpperCase();
+    palabras.push(palabraNueva);
+    agregaPalabra.style.display = "none"
+    jugar();
+})
+
+btnCancelar.addEventListener("click", () => {
+    nuevoJuego.style.display = "none";
+    agregaPalabra.style.display = "none";
+    inicio.style.display = "flex";
+    reset();
+})
+
 
 
 

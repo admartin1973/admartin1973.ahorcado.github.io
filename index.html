@@ -20,8 +20,21 @@
         
         <div class="inicio">
             <button class="btn btn-azul btn-grande" id="btn-nuevo-juego">Iniciar Juego</button>
-            <button class="btn btn-blanco btn-mediano">Agregar Nueva Palabra</button>
+            <button class="btn btn-blanco btn-mediano" id="btn-agregar-palabra">Agregar Nueva Palabra</button>
         </div>
+
+        <div class="agrega-palabra">
+            <div>
+                <form>
+                    <input type="text" placeholder="Ingrese una palabra" id="nueva-palabra" required>
+                    <div>
+                        <input type="submit" class="btn btn-azul" id="btn-guardar" value="Guardar y empezar">
+                        <button type="cancel" class="btn btn-blanco" id="btn-cancelar" onclick="return false">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
         <div class="nuevo-juego">
 

@@ -23,6 +23,30 @@
     height: 55%;
 }
 
+.agrega-palabra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    color: #0A3871;
+    border: none;
+    margin-left: 20px;
+    margin-bottom: 40vh;
+    width: 100%;
+    background-color: #F3F5FC;
+    border-color: #F3F5FC;
+    width: 95%;
+}
+
+input:focus{
+    outline: none;
+}
+
 .nuevo-juego{
     display: flex;
     flex-direction: column;
