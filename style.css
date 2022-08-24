@@ -1,0 +1,123 @@
+.contenedor{
+    background: #F3F5FC;
+    height: 100vh;
+    width: 100vw;
+}
+
+.logo{
+    width: 100%;
+    height: 25%;
+}
+
+.logo img{
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55%;
+}
+
+.nuevo-juego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background-color: #F3F5FC;
+    height: 70%;
+}
+
+.nuevo-juego > div{
+    margin-top: 50px;
+}
+
+.dibujo{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.final{
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    left: 440px;
+    width: 200px;
+}
+
+.palabra{
+    display: flex;
+    height: auto;
+    width: auto;
+    background-color: #F3F5FC;
+}
+
+.palabra > div{
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+    border-bottom-color: #0A3871;
+    border-bottom-left-radius: 2px;
+    margin: 0 15px;
+    width: 100px;
+    text-align: center;
+}
+
+.palabra > div > h1{
+    margin-bottom: 10px;
+    color: #F3F5FC;
+    font-family: 'Inter', sans-serif;
+    font-size: 8em;
+}
+
+/* .palabra > div:nth-child(2) > h1{
+    color: #F3F5FC;
+} */
+
+.no-adivinadas{
+    color: #495057;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2em;
+    margin-top: 40px;
+}
+
+
+.btn{
+    border-radius: 24px;
+    margin: 20px;
+    cursor: pointer;
+    width: 332px;
+    height: 67px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.btn-azul{
+    background: #0A3871;
+    color: #FFFFFF;
+}
+
+.btn-blanco{
+    background:#F3F5FC ;
+    color: #0A3871;
+}
+
+.btn-mediano{
+    width: 280px;
+    height: 80px;
+}
+
+.btn-grande{
+    width: 317px;
+    height: 114px;
+}
+
+
+
+
+

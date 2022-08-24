@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Juego del ahorcado</title>
+</head>
+<body>
+    <div class="contenedor">
+        
+        <div class="logo" id="caja-logo">
+            <img src="./imagenes/Vector.png" alt="Logo de Alura">
+        </div>
+        
+        <div class="inicio">
+            <button class="btn btn-azul btn-grande" id="btn-nuevo-juego">Iniciar Juego</button>
+            <button class="btn btn-blanco btn-mediano">Agregar Nueva Palabra</button>
+        </div>
+
+        <div class="nuevo-juego">
+
+            <div class="dibujo">
+                <canvas width="400" height="500"></canvas>
+                <div class="final"></div>
+            </div>
+
+            <div class="palabra">
+                <!--div>
+                    <h1>A</h1>
+                </div-->
+            </div>
+
+            <p class="no-adivinadas">&nbsp</p>
+        
+            <div>
+                <button class="btn btn-azul" id="btn-jugar-de-nuevo">Nuevo juego</button>
+                <button class="btn btn-blanco" id="btn-desistir">Desistir</button>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>
