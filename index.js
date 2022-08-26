@@ -17,7 +17,7 @@ const nuevaPalabra = document.querySelector("#nueva-palabra");
 
 nuevoJuego.style.display = "none";
 agregaPalabra.style.display = "none"
-dibujarLinea(0,490,490,490);
+//dibujarLinea(0,490,490,490);
 let intentos = 0;
 let coincidencias = 0;
 let letrasAdivinadas = "";
@@ -40,7 +40,7 @@ const reset = () => {
     letrasNoAdivinadas.textContent = espacio;
     document.removeEventListener("keypress", comparaLetra);
     pintarFondoBlanco();
-    dibujarLinea(0,490,490,490,"#0A3871");
+    //dibujarLinea(0,490,490,490,"#0A3871");
     indice = Math.round(Math.random()*(palabras.length-1));
     palabra = palabras[indice];
     intentos = 0;
@@ -54,7 +54,8 @@ const comparaLetra = event => {
         if (!letrasAdivinadas.includes(letra)){
             for (let i=0; i<palabra.length; i++){
                 if (letra === palabra[i]){
-                    let div = document.querySelector(`.palabra > div:nth-child(${i+1}) > h1`);
+                    let div = document.querySelector(`.palabra > div:nth-child(${i+1})`);
+                    div.insertAdjacentHTML("beforeend",`<h1>${letra}</h1>`)
                     div.style.color = "#0A3871";
                     letrasAdivinadas += letra;
                     coincidencias++
@@ -81,9 +82,9 @@ const jugar = () => {
     divFinal.style.display = "none";
     for (let i=0; i<palabra.length; i++){
         let letra = palabra[i].toUpperCase();
-        divPalabra.insertAdjacentHTML("beforeend", `<div><h1>${letra}</h1></div>`)
+        divPalabra.insertAdjacentHTML("beforeend", `<div></div>`)
     }
-    document.addEventListener("keypress", comparaLetra);
+    document.addEventListener("keydown", comparaLetra);
 }
 
 btnNuevoJuego.addEventListener("click", () => {

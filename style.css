@@ -76,6 +76,9 @@ input:focus{
     display: flex;
     align-items: center;
     position: relative;
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+    border-bottom-color: #0A3871;
 }
 
 .final{
@@ -99,12 +102,13 @@ input:focus{
     border-bottom-color: #0A3871;
     margin: 0 15px;
     width: 100px;
+    height: 8em;
     text-align: center;
 }
 
 .palabra > div > h1{
     margin-bottom: 10px;
-    color: #F3F5FC;
+    color: #0A3871;
     font-family: 'Inter', sans-serif;
     font-size: 8em;
 }
@@ -157,6 +161,7 @@ input:focus{
         width: 45px;
         margin: 0 5px;
         border-bottom-width: 4px;
+        height: 3em;
     }
 
     .palabra > div > h1{
@@ -181,6 +186,7 @@ input:focus{
         width: 20px;
         margin: 0 2px;
         border-bottom-width: 3px;
+        height: 1em;
     }
 
     .palabra > div > h1{
