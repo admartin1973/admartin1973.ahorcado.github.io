@@ -16,7 +16,6 @@
 
 .entrada-invisible{
     /* caret-color: #F3F5FC; */
-    background: red;
     color: #F3F5FC;
     width: 50px;
 }
@@ -189,6 +188,14 @@ input:focus{
 
 
 @media screen and (max-width:600px){
+    .contenedor{
+        height: auto;
+    }
+
+    .logo{
+        height: 60px;
+    }
+
     .palabra > div{
         width: 20px;
         margin: 0 2px;

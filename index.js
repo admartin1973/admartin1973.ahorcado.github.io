@@ -1,4 +1,4 @@
-import { pantalla, pintarFondoBlanco, dibujarLinea, dibujarMuneco } from "./graficos.js";
+import { pintarFondoBlanco, dibujarMuneco } from "./graficos.js";
 const inicio = document.querySelector(".inicio");
 const nuevoJuego = document.querySelector(".nuevo-juego");
 const btnNuevoJuego = document.querySelector("#btn-nuevo-juego");
@@ -18,6 +18,7 @@ const entradaInvisible = document.querySelector(".entrada-invisible");
 
 nuevoJuego.style.display = "none";
 agregaPalabra.style.display = "none"
+entradaInvisible.style.display = "none";
 let intentos = 0;
 let coincidencias = 0;
 let letrasAdivinadas = "";
@@ -75,10 +76,16 @@ const comparaLetra = event => {
     }
 }
 
+const tomarFoco = event => {
+    event.currentTarget.focus();
+}
+
 const jugar = () => {
     inicio.style.display = "none";
     nuevoJuego.style.display = "flex";
     divFinal.style.display = "none";
+    entradaInvisible.style.display = "inline";
+    entradaInvisible.addEventListener("blur", tomarFoco);
     entradaInvisible.value = "";
     entradaInvisible.focus();
     for (let i=0; i<palabra.length; i++){
@@ -95,6 +102,8 @@ btnNuevoJuego.addEventListener("click", () => {
 btnDesistir.addEventListener("click", () => {
     nuevoJuego.style.display = "none";
     inicio.style.display = "flex";
+    entradaInvisible.removeEventListener("blur", tomarFoco);
+    entradaInvisible.style.display = "none";
     reset();
 })
 
@@ -125,9 +134,11 @@ btnCancelar.addEventListener("click", () => {
     reset();
 })
 
-entradaInvisible.addEventListener("blur", event => {
-    event.currentTarget.focus();
-})
+
+
+
+
+
 
 
 
