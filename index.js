@@ -13,6 +13,7 @@ const agregaPalabra = document.querySelector(".agrega-palabra");
 const formulario = document.querySelector("form");
 const btnCancelar = document.querySelector("#btn-cancelar");
 const nuevaPalabra = document.querySelector("#nueva-palabra");
+const entradaInvisible = document.querySelector(".entrada-invisible");
 
 
 nuevoJuego.style.display = "none";
@@ -80,6 +81,7 @@ const jugar = () => {
     inicio.style.display = "none";
     nuevoJuego.style.display = "flex";
     divFinal.style.display = "none";
+    entradaInvisible.focus();
     for (let i=0; i<palabra.length; i++){
         let letra = palabra[i].toUpperCase();
         divPalabra.insertAdjacentHTML("beforeend", `<div></div>`)

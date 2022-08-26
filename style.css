@@ -14,6 +14,11 @@
     margin-left: 3%;
 }
 
+.entrada-invisible{
+    caret-color: #F3F5FC;
+    color: #F3F5FC;
+}
+
 .inicio{
     display: flex;
     flex-direction: column;
