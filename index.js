@@ -22,10 +22,9 @@ let intentos = 0;
 let coincidencias = 0;
 let letrasAdivinadas = "";
 
-const palabras = ["ALURA","ORACLE","HTML","JAVASCRIPT","PROGRAMACION","REACT","CANVAS","VARIABLE","BUCLE","ITERACION","INFORMATICA"];
+const palabras = ["ALURA","ORACLE","HTML","JAVASCRIPT","PROGRAMACION","REACT","ALGORITMO","BIBLIOTECA","CLIENTES","COMPILAR","INFORMATICA","CONSOLA","GIT","HARDWARE","LENGUAJE"];
 let indice = Math.round(Math.random()*(palabras.length-1));
 let palabra = palabras[indice];
-
 
 const finalizar = (texto, color) => {
     divFinal.textContent = texto;

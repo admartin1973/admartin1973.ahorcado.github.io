@@ -30,6 +30,18 @@
     align-items: center;
 }
 
+.leyenda{
+    display: flex;
+    margin-left: 20px;
+}
+
+.leyenda > p{
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #495057;
+    font-size: 12px;
+}
+
 input{
     font-family: 'Inter', sans-serif;
     font-size: 32px;
@@ -85,7 +97,6 @@ input:focus{
     border-bottom-style: solid;
     border-bottom-width: 10px;
     border-bottom-color: #0A3871;
-    border-bottom-left-radius: 2px;
     margin: 0 15px;
     width: 100px;
     text-align: center;
@@ -140,6 +151,64 @@ input:focus{
     width: 317px;
     height: 114px;
 }
+
+@media screen and (max-width:820px){
+    .palabra > div{
+        width: 45px;
+        margin: 0 5px;
+        border-bottom-width: 4px;
+    }
+
+    .palabra > div > h1{
+        font-size: 3em;
+    }
+
+    .final{
+        font-size: 1em;
+        left: 440px;
+        width: 100px;
+    }
+
+    .no-adivinadas{
+        letter-spacing: 0.5em;
+    }    
+}
+
+
+
+@media screen and (max-width:600px){
+    .palabra > div{
+        width: 20px;
+        margin: 0 2px;
+        border-bottom-width: 3px;
+    }
+
+    .palabra > div > h1{
+        font-size: 1em;
+    }
+
+    .final{
+        font-size: 1em;
+        left: 126px;
+        width: 80px;
+    }
+
+    .no-adivinadas{
+        letter-spacing: 0.5em;
+        font-size: 1em;
+        margin-top: 20px;
+    }
+    
+    .nuevo-juego > div{
+       text-align: center;
+       margin-top: 15px;
+    }
+
+    .btn{
+        margin: 10px;
+    } 
+}
+
 
 
 
