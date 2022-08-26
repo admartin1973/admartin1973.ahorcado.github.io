@@ -18,7 +18,6 @@ const entradaInvisible = document.querySelector(".entrada-invisible");
 
 nuevoJuego.style.display = "none";
 agregaPalabra.style.display = "none"
-//dibujarLinea(0,490,490,490);
 let intentos = 0;
 let coincidencias = 0;
 let letrasAdivinadas = "";
@@ -31,7 +30,7 @@ const finalizar = (texto, color) => {
     divFinal.textContent = texto;
     divFinal.style.display = "inline";
     divFinal.style.color = color;
-    document.removeEventListener("keypress", comparaLetra);
+    entradaInvisible.removeEventListener("keypress", comparaLetra);
 }
 
 const reset = () => {
@@ -39,9 +38,8 @@ const reset = () => {
         divPalabra.removeChild(divPalabra.firstChild);
     }
     letrasNoAdivinadas.textContent = espacio;
-    document.removeEventListener("keypress", comparaLetra);
+    entradaInvisible.removeEventListener("keypress", comparaLetra);
     pintarFondoBlanco();
-    //dibujarLinea(0,490,490,490,"#0A3871");
     indice = Math.round(Math.random()*(palabras.length-1));
     palabra = palabras[indice];
     intentos = 0;
@@ -87,7 +85,7 @@ const jugar = () => {
         let letra = palabra[i].toUpperCase();
         divPalabra.insertAdjacentHTML("beforeend", `<div></div>`)
     }
-    document.addEventListener("keydown", comparaLetra);
+    entradaInvisible.addEventListener("keydown", comparaLetra);
 }
 
 btnNuevoJuego.addEventListener("click", () => {
@@ -127,8 +125,9 @@ btnCancelar.addEventListener("click", () => {
     reset();
 })
 
-
-
+entradaInvisible.addEventListener("blur", event => {
+    event.currentTarget.focus();
+})
 
 
 
