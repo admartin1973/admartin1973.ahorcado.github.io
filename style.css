@@ -15,7 +15,8 @@
 }
 
 .entrada-invisible{
-    caret-color: #F3F5FC;
+    /* caret-color: #F3F5FC; */
+    background: red;
     color: #F3F5FC;
 }
 

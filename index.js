@@ -81,6 +81,7 @@ const jugar = () => {
     inicio.style.display = "none";
     nuevoJuego.style.display = "flex";
     divFinal.style.display = "none";
+    entradaInvisible.value = "";
     entradaInvisible.focus();
     for (let i=0; i<palabra.length; i++){
         let letra = palabra[i].toUpperCase();
