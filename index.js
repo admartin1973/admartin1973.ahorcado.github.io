@@ -31,7 +31,7 @@ const finalizar = (texto, color) => {
     divFinal.textContent = texto;
     divFinal.style.display = "inline";
     divFinal.style.color = color;
-    entradaInvisible.removeEventListener("keypress", comparaLetra);
+    entradaInvisible.removeEventListener("keyup", comparaLetra);
 }
 
 const reset = () => {
@@ -39,7 +39,7 @@ const reset = () => {
         divPalabra.removeChild(divPalabra.firstChild);
     }
     letrasNoAdivinadas.textContent = espacio;
-    entradaInvisible.removeEventListener("keypress", comparaLetra);
+    entradaInvisible.removeEventListener("keyup", comparaLetra);
     pintarFondoBlanco();
     indice = Math.round(Math.random()*(palabras.length-1));
     palabra = palabras[indice];
@@ -49,7 +49,9 @@ const reset = () => {
 }
 
 const comparaLetra = event => {
-    let letra = event.key.toUpperCase();
+    //let letra = event.key.toUpperCase();
+    const letras = entradaInvisible.value;
+    const letra = letras.substring(letras.length-1).toUpperCase();
     if (!letrasNoAdivinadas.textContent.includes(letra)){
         if (!letrasAdivinadas.includes(letra)){
             for (let i=0; i<palabra.length; i++){
@@ -89,10 +91,10 @@ const jugar = () => {
     entradaInvisible.value = "";
     entradaInvisible.focus();
     for (let i=0; i<palabra.length; i++){
-        let letra = palabra[i].toUpperCase();
+        //let letra = palabra[i].toUpperCase();
         divPalabra.insertAdjacentHTML("beforeend", `<div></div>`)
     }
-    entradaInvisible.addEventListener("keydown", comparaLetra);
+    entradaInvisible.addEventListener("keyup", comparaLetra);
 }
 
 btnNuevoJuego.addEventListener("click", () => {

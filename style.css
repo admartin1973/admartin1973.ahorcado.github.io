@@ -6,7 +6,6 @@
 
 .logo{
     width: 100%;
-    height: 25%;
 }
 
 .logo img{
@@ -17,7 +16,7 @@
 .entrada-invisible{
     /* caret-color: #F3F5FC; */
     color: #F3F5FC;
-    width: 50px;
+    width: 40px;
 }
 
 .inicio{
@@ -26,7 +25,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 55%;
+    height: 90%;
 }
 
 .agrega-palabra{
@@ -54,7 +53,6 @@ input{
     color: #0A3871;
     border: none;
     margin-left: 20px;
-    margin-bottom: 40vh;
     width: 100%;
     background-color: #F3F5FC;
     border-color: #F3F5FC;
@@ -71,11 +69,7 @@ input:focus{
     align-items: center;
     justify-content: end;
     background-color: #F3F5FC;
-    height: 70%;
-}
-
-.nuevo-juego > div{
-    margin-top: 50px;
+    height: auto;
 }
 
 .dibujo{
@@ -96,6 +90,7 @@ input:focus{
 }
 
 .palabra{
+    margin-top: 40px;
     display: flex;
     height: auto;
     width: auto;
@@ -108,7 +103,7 @@ input:focus{
     border-bottom-color: #0A3871;
     margin: 0 15px;
     width: 100px;
-    height: 8em;
+    height: 7em;
     text-align: center;
 }
 
@@ -116,7 +111,7 @@ input:focus{
     margin-bottom: 10px;
     color: #0A3871;
     font-family: 'Inter', sans-serif;
-    font-size: 8em;
+    font-size: 7em;
 }
 
 /* .palabra > div:nth-child(2) > h1{
@@ -131,6 +126,9 @@ input:focus{
     margin-top: 40px;
 }
 
+.botones-juego{
+    margin-top: 20px;
+}
 
 .btn{
     border-radius: 24px;
@@ -185,22 +183,12 @@ input:focus{
     }    
 }
 
-
-
 @media screen and (max-width:600px){
-    .contenedor{
-        height: auto;
-    }
-
-    .logo{
-        height: 60px;
-    }
-
     .palabra > div{
         width: 20px;
         margin: 0 2px;
         border-bottom-width: 3px;
-        height: 1em;
+        height: 1.5em;
     }
 
     .palabra > div > h1{
@@ -208,20 +196,18 @@ input:focus{
     }
 
     .final{
-        font-size: 1em;
-        left: 126px;
+        left: 113px;
         width: 80px;
     }
 
     .no-adivinadas{
-        letter-spacing: 0.5em;
         font-size: 1em;
         margin-top: 20px;
     }
-    
-    .nuevo-juego > div{
-       text-align: center;
-       margin-top: 15px;
+
+    .botones-juego{
+        margin-top: 10px;
+        text-align: center;
     }
 
     .btn{
