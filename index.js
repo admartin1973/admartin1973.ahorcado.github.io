@@ -78,16 +78,16 @@ const comparaLetra = event => {
     }
 }
 
-const tomarFoco = event => {
+/* const tomarFoco = event => {
     event.currentTarget.focus();
-}
+} */
 
 const jugar = () => {
     inicio.style.display = "none";
     nuevoJuego.style.display = "flex";
     divFinal.style.display = "none";
     entradaInvisible.style.display = "inline";
-    entradaInvisible.addEventListener("blur", tomarFoco);
+    //entradaInvisible.addEventListener("blur", tomarFoco);
     entradaInvisible.value = "";
     entradaInvisible.focus();
     for (let i=0; i<palabra.length; i++){
@@ -104,7 +104,7 @@ btnNuevoJuego.addEventListener("click", () => {
 btnDesistir.addEventListener("click", () => {
     nuevoJuego.style.display = "none";
     inicio.style.display = "flex";
-    entradaInvisible.removeEventListener("blur", tomarFoco);
+    //entradaInvisible.removeEventListener("blur", tomarFoco);
     entradaInvisible.style.display = "none";
     reset();
 })
