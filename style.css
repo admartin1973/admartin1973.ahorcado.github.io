@@ -13,11 +13,11 @@
     margin-left: 3%;
 }
 
-.entrada-invisible{
-    /* caret-color: #F3F5FC; */
+/* .entrada-invisible{
     color: #F3F5FC;
     width: 40px;
-}
+    background-color: burlywood;
+} */
 
 .inicio{
     display: flex;

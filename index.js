@@ -13,12 +13,12 @@ const agregaPalabra = document.querySelector(".agrega-palabra");
 const formulario = document.querySelector("form");
 const btnCancelar = document.querySelector("#btn-cancelar");
 const nuevaPalabra = document.querySelector("#nueva-palabra");
-const entradaInvisible = document.querySelector(".entrada-invisible");
+//const entradaInvisible = document.querySelector(".entrada-invisible");
 
 
 nuevoJuego.style.display = "none";
 agregaPalabra.style.display = "none"
-entradaInvisible.style.display = "none";
+//entradaInvisible.style.display = "none";
 let intentos = 0;
 let coincidencias = 0;
 let letrasAdivinadas = "";
@@ -31,7 +31,7 @@ const finalizar = (texto, color) => {
     divFinal.textContent = texto;
     divFinal.style.display = "inline";
     divFinal.style.color = color;
-    entradaInvisible.removeEventListener("keyup", comparaLetra);
+    //entradaInvisible.removeEventListener("keyup", comparaLetra);
 }
 
 const reset = () => {
@@ -39,7 +39,8 @@ const reset = () => {
         divPalabra.removeChild(divPalabra.firstChild);
     }
     letrasNoAdivinadas.textContent = espacio;
-    entradaInvisible.removeEventListener("keyup", comparaLetra);
+    //entradaInvisible.removeEventListener("keyup", comparaLetra);
+    window.removeEventListener("keyup", comparaLetra)
     pintarFondoBlanco();
     indice = Math.round(Math.random()*(palabras.length-1));
     palabra = palabras[indice];
@@ -49,9 +50,9 @@ const reset = () => {
 }
 
 const comparaLetra = event => {
-    //let letra = event.key.toUpperCase();
-    const letras = entradaInvisible.value;
-    const letra = letras.substring(letras.length-1).toUpperCase();
+    const letra = event.key.toUpperCase();
+    //const letras = entradaInvisible.value;
+    //const letra = letras.substring(letras.length-1).toUpperCase();
     if (!letrasNoAdivinadas.textContent.includes(letra)){
         if (!letrasAdivinadas.includes(letra)){
             for (let i=0; i<palabra.length; i++){
@@ -78,23 +79,23 @@ const comparaLetra = event => {
     }
 }
 
-const tomarFoco = event => {
+/* const tomarFoco = event => {
     event.currentTarget.focus();
-} 
+}  */
 
 const jugar = () => {
     inicio.style.display = "none";
     nuevoJuego.style.display = "flex";
     divFinal.style.display = "none";
-    entradaInvisible.style.display = "inline";
-    entradaInvisible.addEventListener("blur", tomarFoco);
-    entradaInvisible.value = "";
-    entradaInvisible.focus();
+    //entradaInvisible.style.display = "inline";
+    //entradaInvisible.addEventListener("blur", tomarFoco);
+    //entradaInvisible.value = "";
+    //entradaInvisible.focus();
     for (let i=0; i<palabra.length; i++){
         //let letra = palabra[i].toUpperCase();
         divPalabra.insertAdjacentHTML("beforeend", `<div></div>`)
     }
-    entradaInvisible.addEventListener("keyup", comparaLetra);
+    window.addEventListener("keyup", comparaLetra);
 }
 
 btnNuevoJuego.addEventListener("click", () => {
@@ -102,10 +103,11 @@ btnNuevoJuego.addEventListener("click", () => {
 })
 
 btnDesistir.addEventListener("click", () => {
-    entradaInvisible.removeEventListener("blur", tomarFoco);
+    //entradaInvisible.removeEventListener("blur", tomarFoco);
+    window.removeEventListener("keyup", comparaLetra)
     nuevoJuego.style.display = "none";
     inicio.style.display = "flex";
-    entradaInvisible.style.display = "none";
+    //entradaInvisible.style.display = "none";
     reset();
 })
 
