@@ -99,11 +99,11 @@ input:focus{
 
 .palabra > div{
     border-bottom-style: solid;
-    border-bottom-width: 10px;
+    border-bottom-width: 7px;
     border-bottom-color: #0A3871;
-    margin: 0 15px;
-    width: 100px;
-    height: 7em;
+    margin: 0 10px;
+    width: 90px;
+    height: 5em;
     text-align: center;
 }
 
@@ -111,7 +111,7 @@ input:focus{
     margin-bottom: 10px;
     color: #0A3871;
     font-family: 'Inter', sans-serif;
-    font-size: 7em;
+    font-size: 5em;
 }
 
 /* .palabra > div:nth-child(2) > h1{
