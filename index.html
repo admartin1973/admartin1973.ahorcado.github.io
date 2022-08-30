@@ -27,12 +27,12 @@
         <div class="agrega-palabra">
             <div>
                 <form>
-                    <input type="text" placeholder="Ingrese una palabra" id="nueva-palabra" required>
+                    <input class="agrega-palabra-input" type="text" placeholder="Ingrese una palabra" id="nueva-palabra" required>
                     <div class="leyenda">
                         <img src="./imagenes/signo.png" alt="Signo de exclamación">
                         <p>Max. de 8 letras</p>
                     </div>    
-                    <div>
+                    <div class="botones-formulario">
                         <input type="submit" class="btn btn-azul" id="btn-guardar" value="Guardar y empezar">
                         <button type="cancel" class="btn btn-blanco" id="btn-cancelar" onclick="return false">Cancelar</button>
                     </div>
@@ -44,7 +44,7 @@
         <div class="nuevo-juego">
 
             <div class="dibujo">
-                <canvas width="400" height="500"></canvas>
+                <canvas width="250" height="300"></canvas>
                 <div class="final"></div>
             </div>
 
