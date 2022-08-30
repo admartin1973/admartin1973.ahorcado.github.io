@@ -50,7 +50,7 @@ const reset = () => {
     entradaInvisible.value = "";
 }
 
-const comparaLetra = event => {
+const comparaLetra = () => {
     const letras = entradaInvisible.value;
     const letra = letras.substring(letras.length-1).toUpperCase();
     if (!letrasNoAdivinadas.textContent.includes(letra)){
